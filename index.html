@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<!-- Localização dos Requisitos Específicos-->
+
+<!--
+Jquery
+ -> No HTML: inicia na linha 599 da página index;
+ -> No JS: na pasta js da raíz do projeto arquivo scroll.js;
+ -> No CSS: pasta CSS na raíz do projeto arquivo style.css a partir da linha 38;
+
+Javascript
+ -> No HTML: arquivo index.html, modal de remessa internacional, linha 187 e 188;
+ -> No JS: na pasta js da raíz do projeto arquivo validacoes.js a partir da linha 69;
+
+Css
+-> No HTML: todas as páginas de HTML, mas é possível observar de forma mais rápida no 
+index.html a partir da linha 605;
+-> No CSS: pasta CSS na raíz do projeto arquivo footer.css;
+
+HTML: aside
+-> No arquivo index.html, section "Section News, Principais Moedas e Quem somos", início na linha 484
+
+HTML: article
+-> No arquivo index.html, section "Section News, Principais Moedas e Quem somos", início na linha 485
+
+-->
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="./img/logo/favicons.png">
+
+  <!--FontAwesome-->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css"
+    integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
+
+  <!--CSS-->
+  <link rel="stylesheet" href="./css/header.css">
+  <link rel="stylesheet" href="./css/carousel.css">
+  <link rel="stylesheet" href="./css/style.css">
+  <link rel="stylesheet" href="./css/validacoes.css">
+  <link rel="stylesheet" href="./css/footer.css">
+
+  <!--CSS Bootstrap-->
+  <link rel="stylesheet" href="./bootstrap/css/bootstrap.min.css">
+
+  <title>Ideal Câmbio e Turismo</title>
+
+</head>
+
+<body>
+  <div class="container-fluid p-0">
+
+    <header id="top">
+
+      <!--Barra de Navegação-->
+      <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+
+        <!--Logo-->
+
+        <a class="navbar-brand" href="./index.html"><img src="./img/logo/Screenshot_2.png" class="img-fluid imgLogo"
+            alt="Ideal Câmbio e Turismo Logo"></a>
+
+        <!--Menu-->
+
+        <button class="navbar-toggler" data-toggle="collapse" data-target="#navegacao">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div id="navegacao" class="collapse navbar-collapse justify-content-md-end justify-content-sm-center">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link itemMenu active" href="./index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link itemMenu" href="./pages/quemSomos/quemSomos.html">Sobre</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link itemMenu dropdown-toggle" data-toggle="dropdown">Serviços</a>
+              <div class="dropdown-menu dropdown-menu-right border-0 bg-dark">
+                <a class="dropdown-item bg-dark text-white-50" href="./pages/cambio/cambio.html">Câmbio</a>
+                <a class="dropdown-item bg-dark text-white-50" href="./pages/servicosViagem/servicosViagem.html">Seguro
+                  Viagem</a>
+                <a class="dropdown-item bg-dark text-white-50" href="./pages/servicosViagem/servicosViagem.html">Chip
+                  Internacional</a>
+                <a class="dropdown-item bg-dark text-white-50" href="./pages/servicosViagem/servicosViagem.html">Cartão
+                  Multimoedas</a>
+                <a class="dropdown-item bg-dark text-white-50"
+                  href="./pages/pgtoInternacional/remessaInternacional.html">Remessa
+                  Internacional</a>
+              </div>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link itemMenu" href="./pages/contato/contato.html">Contato</a>
+            </li>
+          </ul>
+        </div>
+
+      </nav>
+
+    </header>
+
+    <!--Conteúdo principal-->
+    <main>
+
+      <!--Carousel-->
+
+      <div class="col-md-12 m-0 p-0">
+        <!--Carousel-->
+        <div id="carousel-servicos" class="carousel slide carousel-fade" data-ride="carousel">
+
+          <!--INDICADORES-->
+
+          <ol class="carousel-indicators">
+            <li data-target="#carousel-servicos" data-slide-to="0"></li>
+            <li data-target="#carousel-servicos" data-slide-to="1"></li>
+            <li data-target="#carousel-servicos" data-slide-to="2"></li>
+          </ol>
+
+          <div class="caroulsel-inner">
+            <div class="carousel-item imgCarousel active">
+              <div class="carousel-caption bgLegenda">
+                <h3 class="font-weight-bold text-warning">Remessa Internacional</h3>
+                <p class="lead text-white">Envio e recebimento de valores, além de transações internacionais, entre
+                  contas
+                  correntes</p>
+                <a class="btn btn-warning p-md-3 p-sm-1" data-toggle="modal" data-target="#cotacaoRemessa">Faça
+                  sua cotação</a>
+              </div>
+            </div>
+            <div class="carousel-item imgCarousel">
+              <div class="carousel-caption bgLegenda">
+                <h3 class="font-weight-bold text-warning">Câmbio</h3>
+                <p class="lead text-white">As melhores taxas de câmbio do mercado no conforto da sua casa</p>
+                <a class="btn btn-warning p-md-3 p-sm-1" data-toggle="modal" data-target="#cotacaoCambio">Faça
+                  sua cotação</a>
+              </div>
+            </div>
+            <div class="carousel-item imgCarousel">
+              <div class="carousel-caption bgLegenda">
+                <h3 class="font-weight-bold text-warning">Serviços para viagem</h3>
+                <p class="lead text-white">Seguro saúde, chip Internacional e cartão de crédito multimoedas</p>
+                <a href="./pages/servicosViagem/servicosViagem.html"
+                  class="btn btn-warning p-md-3 p-sm-1 text-white">Conheça
+                  nossos
+                  serviços</a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Modal Remessa Internacional -->
+
+      <div class="modal fade" id="cotacaoRemessa" tabindex="-1" role="dialog" aria-labelledby="cotacaoRemessa"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Cotação para Remessa Internacional</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <form class="form p-3">
+
+                <div class="form-group row justify-content-sm-between">
+                  <select class="custom-select col-sm-4" id="carouselTipoRemessa">
+                    <option value="" disabled selected>Tipo de remessa</option>
+                    <option value="enviarValor">Enviar valor</option>
+                    <option value="receberValor">Receber valor</option>
+                    <option value="pagamentoCursos">Pagamento de cursos ou congressos</option>
+                    <option value="investimento">Investimento no exterior</option>
+                    <option value="transferencia">Transferência entre contas correntes</option>
+                  </select>
+                  <select class="custom-select col-sm-3" id="carouselTipoEntidade">
+                    <option value="" disabled selected>Tipo de entidade</option>
+                    <option value="pessoaFisica">Pessoa Física</option>
+                    <option value="pessoaJuridica">Pessoa Jurídica</option>
+                  </select>
+                  <div class="input-group col-md-4 p-0" id="divCpf">
+                    <div class="input-group-prepend">
+                      <label class="input-group-text" for="cpf">CPF</label>
+                    </div>
+                    <input type="text" id="cpf" name="cpf" class="form-control" placeholder="apenas números">
+                  </div>
+                  <div class="input-group col-md-4 p-0" id="divCnpj">
+                    <div class="input-group-prepend">
+                      <label class="input-group-text" for="cnpj">CNPJ</label>
+                    </div>
+                    <input type="text" id="cnpj" name="cnpj" class="form-control" placeholder="apenas números"
+                      onblur="validarCNPJ()">
+                  </div>
+                </div>
+
+                <div class="form-group row d-flex justify-content-sm-between">
+                  <label class="sr-only">Nome Completo</label>
+                  <input type="text" name="nome" class="form-control col-sm-6" placeholder="Nome Completo" id="nomeRemessa">
+                  <label class="sr-only">RG</label>
+                  <input type="text" id="rg" name="rg" class="form-control col-sm-5"
+                    placeholder="RG, RNE ou passaporte">
+                </div>
+
+                <div class="form-group row justify-content-sm-between">
+                  <div class="input-group col-md-6 p-0">
+                    <div class="input-group-prepend">
+                      <div class="input-group-text"><i class="fas fa-at"></i></div>
+                    </div>
+                    <input type="email" id="emailRemessa" name="emailRemessa" class="form-control" placeholder="Email">
+                  </div>
+                  <div class="input-group col-md-5 p-0">
+                    <div class="input-group-prepend">
+                      <div class="input-group-text"><i class="fas fa-phone-square"></i></div>
+                    </div>
+                    <input type="text" id="telefoneRemessa" name="telefoneRemessa" class="form-control"
+                      placeholder="Telefone (apenas números)">
+                  </div>
+                </div>
+
+                <div class="form-group row justify-content-sm-between">
+                  <div class="input-group col-md-4 p-0">
+                    <div class="input-group-prepend">
+                      <label class="input-group-text" for="moedaEntradaRemessa">Moeda</label>
+                    </div>
+                    <select class="custom-select" id="moedaEntradaRemessa">
+                      <option value="" disabled selected>Entrada</option>
+                      <option value="dolarAmericano">Dólar Americano</option>
+                      <option value="dolarAustraliano">Dólar Australiano</option>
+                      <option value="dolarNZ">Dólar Nova Zelândia</option>
+                      <option value="pesoAr">Peso Argentino</option>
+                      <option value="euro">Euro</option>
+                      <option value="libra">Libra</option>
+                      <option value="pesoAr">Peso Argentino</option>
+                      <option value="realBr">Real Brasileiro</option>
+                      <option value="outras">Outras (sob consulta)</option>
+                    </select>
+                  </div>
+                  <div class="input-group col-md-4 p-0">
+                    <div class="input-group-prepend">
+                      <label class="input-group-text" for="moedaSaidaRemessa">Moeda</label>
+                    </div>
+                    <select class="custom-select" id="moedaSaidaRemessa">
+                      <option value="" disabled selected>Saída</option>
+                      <option value="dolarAmericano">Dólar Americano</option>
+                      <option value="dolarAustraliano">Dólar Australiano</option>
+                      <option value="dolarNZ">Dólar Nova Zelândia</option>
+                      <option value="pesoAr">Peso Argentino</option>
+                      <option value="euro">Euro</option>
+                      <option value="libra">Libra</option>
+                      <option value="pesoAr">Peso Argentino</option>
+                      <option value="realBr">Real Brasileiro</option>
+                      <option value="outras">Outras (sob consulta)</option>
+                    </select>
+                  </div>
+                  <div class="input-group col-sm-3 p-0">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text">Valor $</span>
+                    </div>
+                    <input type="text" class="form-control" id="valorRemessa">
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <textarea id="mensagem" name="mensagem" cols="30" rows="4" class="form-control"
+                    placeholder="Digite sua mensagem"></textarea>
+                </div>
+              </form>
+            </div>
+            <div class="modal-footer">
+              <button type="submit" class="btn btn-warning text-white" id="btnCarouselRemessa">Enviar
+                Cotação</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Modal Cotação de Câmbio -->
+
+      <div class="modal fade" id="cotacaoCambio" tabindex="-1" role="dialog" aria-labelledby="cotacaoCambio"
+        aria-hidden="true">
+
+        <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Cotação Câmbio</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <form class="form p-3">
+
+                <div class="form-group row d-flex justify-content-sm-between">
+                  <label class="sr-only">Nome Completo</label>
+                  <input type="text" name="nome" class="form-control col-sm-12" placeholder="Nome Completo" id="nomeCambio">
+                </div>
+
+                <div class="form-group row justify-content-sm-between">
+                  <div class="input-group col-md-6 p-0">
+                    <div class="input-group-prepend">
+                      <div class="input-group-text"><i class="fas fa-at"></i></div>
+                    </div>
+                    <input type="email" id="emailCambio" name="emailCambio" class="form-control" placeholder="Email">
+                  </div>
+                  <div class="input-group col-md-5 p-0">
+                    <div class="input-group-prepend">
+                      <div class="input-group-text"><i class="fas fa-phone-square"></i></div>
+                    </div>
+                    <input type="text" id="telefoneCambio" name="telefoneCambio" class="form-control"
+                      placeholder="Telefone (apenas números)">
+                  </div>
+                </div>
+
+                <div class="form-group row justify-content-sm-between">
+                  <div class="input-group col-md-4 p-0">
+                    <div class="input-group-prepend">
+                      <label class="input-group-text" for="moedaEntradaCambio">Moeda</label>
+                    </div>
+                    <select class="custom-select" id="moedaEntradaCambio">
+                      <option value="" disabled selected>Entrada</option>
+                      <option value="dolarAmericano">Dólar Americano</option>
+                      <option value="dolarAustraliano">Dólar Australiano</option>
+                      <option value="dolarNZ">Dólar Nova Zelândia</option>
+                      <option value="pesoAr">Peso Argentino</option>
+                      <option value="euro">Euro</option>
+                      <option value="libra">Libra</option>
+                      <option value="pesoAr">Peso Argentino</option>
+                      <option value="realBr">Real Brasileiro</option>
+                      <option value="outras">Outras (sob consulta)</option>
+                    </select>
+                  </div>
+                  <div class="input-group col-md-4 p-0">
+                    <div class="input-group-prepend">
+                      <label class="input-group-text" for="moedaSaidaCambio">Moeda</label>
+                    </div>
+                    <select class="custom-select" id="moedaSaidaCambio">
+                      <option value="" disabled selected>Saída</option>
+                      <option value="dolarAmericano">Dólar Americano</option>
+                      <option value="dolarAustraliano">Dólar Australiano</option>
+                      <option value="dolarNZ">Dólar Nova Zelândia</option>
+                      <option value="pesoAr">Peso Argentino</option>
+                      <option value="euro">Euro</option>
+                      <option value="libra">Libra</option>
+                      <option value="pesoAr">Peso Argentino</option>
+                      <option value="realBr">Real Brasileiro</option>
+                      <option value="outras">Outras (sob consulta)</option>
+                    </select>
+                  </div>
+                  <div class="input-group col-sm-3 p-0">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text">Valor $</span>
+                    </div>
+                    <input type="text" class="form-control" id="valorCambio">
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <textarea id="mensagem" name="mensagem" cols="30" rows="4" class="form-control"
+                    placeholder="Digite sua mensagem"></textarea>
+                </div>
+              </form>
+            </div>
+            <div class="modal-footer">
+              <button type="submit" class="btn btn-warning text-white" id="btnCarouselCambio">Enviar
+                Cotação</button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Modal de confirmação -->
+      <div class="modal fade" id="cotacaoConfirmada" tabindex="-1" role="dialog" aria-labelledby="cotacaoConfirmada"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <h4 class="lead">Sua cotação foi enviada com sucesso! Em breve vamos entrar em contato com você por email
+                ou telefone.</h4>
+              <h4 class="lead">Caso queira, você também pode nos chamar no whatsapp <a
+                  href="https://api.whatsapp.com/send?phone=5585981268049" target="_blank">
+                  <i class="fab fa-whatsapp-square fa-2x text-warning"></i>
+                </a></h4>
+
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Concluir</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Modal de preencher todos os campos -->
+      <div class="modal fade" id="preencherCampos" tabindex="-1" role="dialog" aria-labelledby="preencherCampos"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <h4 class="lead text-danger text-center">Preencha todos os campos para que a cotação seja enviada!</h4>
+              <h4 class="lead">Caso queira, você também pode nos chamar no whatsapp <a
+                  href="https://api.whatsapp.com/send?phone=5585981268049" target="_blank">
+                  <i class="fab fa-whatsapp-square fa-1x text-warning"></i>
+                </a></h4>
+
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Concluir</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!--Section Serviços-->
+
+      <section class="my-sm-5">
+        <div class="row m-0">
+          <div class="col-md-12 m-0 p-0">
+
+            <h3 class="display-3 font-weight-bold my-sm-5 text-center text-uppercase">Nossos Serviços</h3>
+          </div>
+        </div>
+        <div class="row m-0 d-flex justify-content-md-around">
+          <div class="col-md-3">
+            <div class="card bg-warning">
+              <div class="card-body">
+                <h5 class="card-title">Câmbio</h5>
+                <p class="card-text">Você pode também pode fazer sua transação<strong> no conforto da sua casa</strong>, de forma segura
+                  e sem taxa de entrega
+                </p>
+                <a class="card-link btn btn-light" data-toggle="modal" data-target="#cotacaoCambio">Faça sua cotação</a>
+                <a href="./pages/cambio/cambio.html" class="card-link btn btn-light">Saiba mais</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-3">
+            <div class="card bg-warning">
+              <div class="card-body">
+                <h5 class="card-title">Remessa Internacional</h5>
+                <p class="card-text">Transferência de patrimônio, manutenção de residentes, pagamento de
+                  curso e congressos, investimento no exterior</p>
+                <a class="card-link btn btn-light" data-toggle="modal" data-target="#cotacaoRemessa">Faça sua
+                  cotação</a>
+                <a href="./pages/pgtoInternacional/remessaInternacional.html" class="card-link btn btn-light">Saiba
+                  mais</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-3">
+            <div class="card bg-warning">
+              <div class="card-body">
+                <h5 class="card-title">Serviços para sua viagem</h5>
+                <p class="card-text">Para você curtir sua viagem tranquilamente: Seguro saúde, chip Internacional e cartão de crédito
+                  multimoedas</p>
+                <a href="./pages/servicosViagem/servicosViagem.html" class="card-link btn btn-light">Saiba mais</a>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </section>
+
+      <!-- Section News, Principais Moedas e Quem somos  -->
+
+      <section>
+        <div class="sectionNews row m-0 my-sm-5">
+          <div class="col-md-4">
+            <!-- Section News -->
+
+            <aside class="bg-dark p-sm-3">
+              <article class="my-sm-2">
+                <div class="card">
+                  <div class="card-header">Mercado Financeiro</div>
+                  <div class="card-body">
+                    <h5 class="card-title">Câmbio: Dólar sobe com cautela em NY</h5>
+                    <p class="card-text text-truncate">O dólar se mantém em alta no mercado doméstico, após subir 1,25%
+                      na sexta e
+                      acumular ganho de 4,67%4 na última semana. O ajuste para cima reflete um dólar forte ante divisas
+                      emergentes e ligadas a commodities no exterior e fatores locais.</p>
+                    <a href="https://einvestidor.estadao.com.br/ultimas/cambio-dolar-sobe-com-cautela-em-ny"
+                      class="btn btn-warning text-white">Ver mais</a>
+                  </div>
+                </div>
+              </article>
+              <article class="my-sm-2">
+                <div class="card">
+                  <div class="card-header">Turismo</div>
+                  <div class="card-body">
+                    <h5 class="card-title">Reino Unido flexibiliza lockdown, mas não viagens internacionais</h5>
+                    <p class="card-text text-truncate">Retomada das viagens não essenciais será 17 de maio e autoridades
+                      alertaram que
+                      um novo adiamento pode ser necessário</p>
+                    <a href="https://www.infomoney.com.br/economia/reino-unido-flexibiliza-lockdown-mas-nao-viagens-internacionais/"
+                      class="btn btn-warning text-white">Ver mais</a>
+                  </div>
+                </div>
+              </article>
+              <article class="my-sm-2">
+                <div class="card">
+                  <div class="card-header">Mercado Financeiro</div>
+                  <div class="card-body">
+                    <h5 class="card-title">Ibovespa recua após se aproximar de 119 mil pontos</h5>
+                    <p class="card-text text-truncate">O Ibovespa recuava nesta terça-feira após voltar a orbitar os 119
+                      mil pontos na
+                      véspera e em meio a receios sobre o Orçamento de 2021 e números fortes para a inflação
+                      norte-americana. GPA, por sua vez, avança mais de 5% diante de potencial operação envolvendo a
+                      Cnova.</p>
+                    <a href="https://einvestidor.estadao.com.br/ultimas/ibovespa-recua-apos-se-aproximar-de-119-mil-pontos/"
+                      class="btn btn-warning text-white">Ver mais</a>
+                  </div>
+                </div>
+              </article>
+            </aside>
+          </div>
+          <div class="col-md-8">
+            <!-- Principais Moedas -->
+
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title">Moedas disponíveis</h5>
+                <p class="card-text">Além das moedas abaixo, você pode nos consultar sobre outras possibilidades</p>
+              </div>
+              <div class="d-flex justify-content-md-around">
+                <ul class="list-group list-group-flush">
+                  <li class="list-group-item border-0"><img class="bandeiras mr-sm-3" src="./img/moedas/dollar.png"
+                      alt="EUA"> Dólar</li>
+                  <li class="list-group-item border-0"><img class="bandeiras mr-sm-3" src="./img/moedas/euro.png"
+                      alt="União Europeia"> Euro</li>
+                  <li class="list-group-item border-0"><img class="bandeiras mr-sm-3" src="./img/moedas/libra.png"
+                      alt="Reino Unido"> Libra</li>
+                  <li class="list-group-item border-0"><img class="bandeiras mr-sm-3" src="./img/moedas/canadense.png"
+                      alt="Canadá">Dólar Canadense</li>
+                </ul>
+                <ul class="list-group list-group-flush">
+                  <li class="list-group-item border-0"><img class="bandeiras mr-sm-3" src="./img/moedas/australiano.png"
+                      alt="Austrália">Dólar Australiano</li>
+                  <li class="list-group-item border-0"><img class="bandeiras mr-sm-3" src="./img/moedas/argentino.png"
+                      alt="Argentina">Peso Argentino</li>
+                  <li class="list-group-item border-0"><img class="bandeiras mr-sm-3"
+                      src="./img/moedas/nova-zelandia.png" alt="Nova Zelândia">Dólar Nova Zelândia</li>
+                  <li class="list-group-item border-0"><img class="bandeiras mr-sm-3"
+                      src="./img/moedas/franco-suico.png" alt="Suiça">Franco Suiço</li>
+                </ul>
+              </div>
+              <div class="card-body">
+                <a class="btn btn-warning text-white" data-toggle="modal" data-target="#cotacaoCambio">Faça sua cotação</a>
+              </div>
+            </div>
+
+            <!-- Quem Somos -->
+
+            <div class="card mt-sm-3">
+              <div class="card-body">
+                <h5 class="card-title my-sm-2">Ideal Câmbio e Turismo</h5>
+                <p class="lead">A Ideal Câmbio e Turismo, traz ao mercado de Câmbio de Fortaleza, toda a segurança,
+                  credibilidade e confiança que você precisa, oferecendo sempre tranquilidade ao adquirir moedas, como
+                  também outros produtos.</p>
+                <p class="lead text-truncate">
+                  Contando sempre com uma equipe altamente preparada e sempre disposta a oferecer a você o melhor
+                  atendimento, somos conhecidos pelos nossos clientes, como uma referência de atendimento. Estamos
+                  sempre a postos para sanar todas as suas dúvidas sobre seguro de viagens, chips internacionais, câmbio
+                  comercial, remessas financeiras, transferências internacionais ou até mesmo sobre operações cambiais
+                  como compra e vendas de moedas, satisfazendo assim, todas as suas necessidades.
+                </p>
+                <a href="./pages/quemSomos/quemSomos.html" class="btn btn-warning text-white my-sm-2">Conheça</a>
+              </div>
+            </div>
+          </div>
+      </section>
+
+      <!-- Parceiros  -->
+
+      <section class="my-sm-5">
+        <div class="parceiros row m-0 d-flex justify-content-sm-around">
+          <div class="col-md-2 my-sm-3 listaParceiros" id="daycoval"></div>
+          <div class="col-md-2 my-sm-3 listaParceiros" id="travelAce"></div>
+          <div class="col-md-2 my-sm-3 listaParceiros" id="lycaMobile"></div>
+          <div class="col-md-2 my-sm-3 listaParceiros" id="westernUnion"></div>
+          <div class="col-md-2 my-sm-3 listaParceiros" id="cashPassport"></div>
+        </div>
+      </section>
+
+      <!--Seta para cima: requisito jQuery-->
+
+      <div>
+        <a href="#top" id="setaTop"><i class="fas fa-angle-double-up fa-2x"></i></a>
+      </div>
+
+      <!--Footer-->
+
+      <footer>
+        <img id="logoFooter" src="./img/logo/logo-removebg-preview.png" alt="Logo Ideal Cambio e Turismo">
+
+        <div id="address">
+          <i class="fas fa-map-marked midias"></i>
+          <a id="linkEndereco" href="https://g.page/idealcambio?share">
+            Av. Monsenhor Tabosa, 1313, Loja 4
+          </a>
+        </div>
+
+        <div class="divMidias">
+          <a href="https://www.facebook.com/Ideal-C%C3%A2mbio-e-Turismo-353742515383819/" target="_blank">
+            <i class="fab fa-facebook-square midias"></i>
+          </a>
+          <a href="https://www.instagram.com/idealcambio/" target="_blank">
+            <i class="fab fa-instagram-square midias"></i>
+          </a>
+          <a href="https://api.whatsapp.com/send?phone=5585981268049" target="_blank">
+            <i class="fab fa-whatsapp-square midias"></i>
+          </a>
+        </div>
+
+      </footer>
+
+    </main>
+  </div>
+
+  <!--Javascript-->
+
+  <!--jQuery-->
+  <script src="./js/jQuery/jQuery.js"></script>
+
+  <!--Popper-->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+    integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+    crossorigin="anonymous"></script>
+
+  <!--Bootstrap JS-->
+  <script src="./bootstrap/js/bootstrap.min.js"></script>
+
+  <!--JS-->
+  <script src="./js/scroll.js"></script>
+  <script src="./js/validacoes.js"></script>
+
+</body>
+
+</html>

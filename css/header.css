@@ -1,0 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+div:not(.divMidias), button, aside, article{
+  font-family: 'Poppins', sans-serif !important;
+}
+
+html{
+  scroll-behavior: smooth;
+}
+
+.imgLogo{
+  width: 10rem;
+}
+
+.itemMenu {
+  font-size: 1.2rem;
+}
+
+@media (max-width: 768px) {
+
+  .itemMenu {
+    font-size: 1rem;
+  }
+}
+
+.bg-warning{
+  opacity: 0.8;
+}

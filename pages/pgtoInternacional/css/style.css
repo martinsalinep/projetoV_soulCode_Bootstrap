@@ -1,0 +1,19 @@
+.imgParceiros {
+  min-width: 15vw;
+  min-height: 20vh;
+}
+
+.imgParceiros:nth-child(1){
+  background: url('../../../img/parceiros/banco-daycoval.png') center / contain no-repeat;
+}
+
+.imgParceiros:nth-child(2){
+  background: url('../../../img/parceiros/WU.png') center / contain no-repeat;
+}
+
+@media (max-width: 768px){
+  .imgParceiros {
+    width: 70vw;
+    height: 10vh;
+  }
+}

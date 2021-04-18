@@ -1,0 +1,67 @@
+.bandeiras {
+  max-width: 2.5rem;
+}
+
+/* Parceiros */
+
+.parceiros {
+  min-height: 20vh;
+}
+
+.listaParceiros {
+  min-width: 15vw;
+  min-height: 20vh;
+}
+
+#daycoval {
+  background: url('../img/parceiros/banco-daycoval.png') center / contain no-repeat;
+}
+
+#travelAce {
+  background: url('../img/parceiros/TA.png') center / cover no-repeat;
+}
+
+#lycaMobile {
+  background: url('../img/parceiros/Lycamobile.png') center / cover no-repeat;
+}
+
+#westernUnion {
+  background: url('../img/parceiros/WU.png') center / contain no-repeat;
+}
+
+#cashPassport {
+  background: url('../img/parceiros/cash.png') center / contain no-repeat;
+}
+
+/* Seta para o topo*/
+
+#setaTop{
+  position: fixed;
+  right: 2vw;
+  bottom: 10vh;
+  color: #FEC200;
+}
+
+#setaTop:hover{
+  opacity: 0.6;
+}
+
+@media (max-width: 768px) {
+
+  .listaParceiros {
+    margin: 10px 5px;
+    width: 80vw;
+    height: 15vh;
+  }
+
+  #setaTop{
+    position: fixed;
+    right: 2vw;
+    bottom: 10vh;
+    color: #212529;
+  }
+  
+  #setaTop:hover{
+    opacity: 0.6;
+  }
+}

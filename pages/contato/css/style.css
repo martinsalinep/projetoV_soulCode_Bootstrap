@@ -1,0 +1,27 @@
+.midiasContato{
+  color:#212529;
+}
+
+.midiasContato:hover{
+  opacity: 0.6;
+}
+
+@media (max-width: 1024px){
+  .mapaGoogle {
+    width: 100%;
+  }
+}
+
+.card:nth-child(1) {
+  background: rgba(248, 230, 28, 0.616) !important;
+  /* backdrop-filter: blur(15.5px) !important;
+  -webkit-backdrop-filter: blur(15.5px) !important; */
+}
+.card:nth-child(2) {
+  background: rgb(218, 103, 103) !important;
+  backdrop-filter: blur(15.5px) !important;
+  -webkit-backdrop-filter: blur(15.5px) !important;
+}
+
+body {
+}

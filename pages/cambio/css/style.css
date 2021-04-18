@@ -1,0 +1,11 @@
+.bandeiras {
+  max-width: 2.5rem;
+}
+
+.whatsTexto{
+  color: #FEC200;
+}
+
+.whatsTexto:hover{
+  opacity: 0.6;
+}

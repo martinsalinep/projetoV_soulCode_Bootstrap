@@ -1,0 +1,25 @@
+/* Carousel */
+
+.imgCarousel {
+  height: 90vh;
+}
+
+.bgLegenda{
+  background-color: #817f7fc2;
+}
+
+.imgCarousel:nth-child(1) {
+  background: url('../img/carousel/tech-daily-GdRvIi8mWzE-unsplash.jpg') center / cover no-repeat;
+}
+
+.imgCarousel:nth-child(2) {
+  background: url('../img/carousel/dmitry-demidko-eBWzFKahEaU-unsplash.jpg') center / cover no-repeat;
+}
+
+.imgCarousel:nth-child(3) {
+  background: url('../img/carousel/christine-roy-ir5MHI6rPg0-unsplash.jpg') center / cover no-repeat;
+}
+
+.carousel-caption {
+  bottom: 150px !important;
+}
